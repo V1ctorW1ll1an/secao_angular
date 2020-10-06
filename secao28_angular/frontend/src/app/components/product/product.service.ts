@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TIMEOUT } from 'dns';
 import { Observable } from 'rxjs';
 import { Product } from './product.model';
 import { timeout } from 'rxjs/operators';
