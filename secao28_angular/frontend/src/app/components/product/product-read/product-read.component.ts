@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-read.component.scss'],
 })
 export class ProductReadComponent implements OnInit {
-  private products: Product[];
+  public products: Product[];
 
   constructor(private productService: ProductService) {}
 
