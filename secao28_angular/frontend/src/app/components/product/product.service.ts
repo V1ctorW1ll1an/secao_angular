@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TIMEOUT } from 'dns';
 import { Observable } from 'rxjs';
 import { Product } from './product.model';
+import { timeout } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +22,13 @@ export class ProductService {
     });
   }
 
+  // metodos http são async graças ao observe
+
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product);
+    return this.http.post<Product>(this.baseUrl, product).pipe(timeout(10000));
+  }
+
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl);
   }
 }
