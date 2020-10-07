@@ -4,7 +4,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { Product } from './product.model';
 import { catchError, map, timeout } from 'rxjs/operators';
-import { exception } from 'console';
 
 @Injectable({
   providedIn: 'root',
